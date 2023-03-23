@@ -1,5 +1,6 @@
 package proj;
 
+
 import java.util.ArrayList;
 
 public class Subject extends Student {
@@ -20,50 +21,81 @@ public class Subject extends Student {
 	 public String getsubjectcode() {
 			return Subjectcode;
 		}
-	 public void setFullmark(String mark) {
-		if(!mark.equals("100")) {
+	 
+	  public void setFullmark(String mark) {
+		if(checkFullmark(mark)) {
 			errors+="The full mark should be 100!!";
-		flag=true;	
+		    flag=true;	
 		}
-		else fullmark=mark;
+		else this.fullmark=mark;
 	 }
-		public void setSubjectName(final String name) {
-			if(name.charAt(0)==' '||!(name.matches("^[a-zA-Z ]*$"))) {
+		
+	  public boolean checkFullmark(String mark) {
+			 boolean f= false;
+				if(!mark.equals("100")) {
+					f = true;
+				}
+			 
+			 return f;
+		 }
+	 
+	 
+	 public void setSubjectName(final String name) {
+			if(checkSubjectName(name)) {
 				errors+="Invalid Subject Name";
 				flag=true;	
 			}
+			else
 			this.Subjectname = name;
 		}
 	 
-	   
-		public void setcode(final String name) {
+	 public boolean checkSubjectName(final String name) {
+		 
+		 return (name.charAt(0)==' '||!(name.matches("^[a-zA-Z ]*$")));
+}
+		
+	 
+	 
+	 public void setcode(final String name) {
 			
+		
+		if(checkcode(name))
+			
+		    errors="Invalid Subject Code";
+		else
+				
+			this.Subjectcode = name;
+	
+			
+		}
+	 public boolean checkcode(final String name) {
+		 	boolean f = false;
 			if(name.length()<6||name.length()>7){
-            	errors="Invalid Subject Code";
-            	flag=true;
+            	f=true;
             }
 			else {
 				for (int i = 0; i < name.length(); i++)
 		        {
 		            char c = name.charAt(i);
 		            if ((i<3)&&!(c >= 'A' && c <= 'Z') && !(c >= 'a' && c <= 'z')) {
-		            	errors="Invalid Subject Code";
-		            	flag=true;
+		            	
+		            	f=true;
 		            }
 		            if ((i>3&&(i!=6))&&!(c >= '0' && c <= '9')){
-		            	errors="Invalid Subject Code";
-		            	flag=true;
+		            	
+		            	f=true;
 		            }
 		            if(i==6&&c!='s'){
-		            	errors="Invalid Subject Code";
-		            	flag=true;
+		            	
+		            	f=true;
 		            }
 		        }
-				if(!flag)
-				this.Subjectcode = name;
+		 
 			}
-			
-		}
+			return f;
+		 
+	 }
+	 
 	  	public void setdata(ArrayList<Student> students) {
 	  		this.students = students;
 	  	}
