@@ -1,4 +1,4 @@
-package proj;
+package project;
 
 import java.util.*;
 
@@ -21,9 +21,16 @@ public class Student {
 	public String getName() {
 		return Studentname;
 	}
-
+        public boolean checkErrorName(final String name){
+            if(name.charAt(0)==' '||!(name.matches("^[a-zA-Z ]*$"))){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
 	public void setName(final String name) {
-		if(name.charAt(0)==' '||!(name.matches("^[a-zA-Z ]*$"))) {
+		if(checkErrorName(name)) {
 			error+="Invalid Student Name ";
 			flag=true;
 		} 
@@ -34,57 +41,104 @@ public class Student {
 		return Studentnumber;
 	}
 	
-
+        public boolean checkErrorNumber(final String Studentnumber){
+            if(Studentnumber.length()!= 8){
+                return true;
+            }
+            else{
+                for(int i = 0; i < Studentnumber.length(); i++){
+                    char c = Studentnumber.charAt(i);
+                    if (((c >= 'A' && c <= 'Z')||(c >= 'a' && c <= 'z'))&&i!=7){
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
 	public void setnumber(final String Studentnumber) {
-		if(Studentnumber.length()!=8) {
-			error+="Invalid Student Number ";
-			flag=true;
-		}
-		else {
-			for (int i = 0; i < Studentnumber.length(); i++)
-	        {
-	            char c = Studentnumber.charAt(i);
-	            if (((c >= 'A' && c <= 'Z')||(c >= 'a' && c <= 'z'))&&i!=7) {
-	            	
-	            	error+="Invalid Student Number ";
-	    			flag=true;
-	            	
-	            }
-	            
-	        }
-			
-			
-			this.Studentnumber = Studentnumber;
-		}
-		
-	}
+            if(checkErrorNumber(Studentnumber)){
+                error += "Invalid Student Number ";
+                flag = true;
+            }
+            else{
+                this.Studentnumber = Studentnumber;
+            }	
+        }
+        
+            
+//		if(Studentnumber.length()!=8) {
+//			error+="Invalid Student Number ";
+//			flag=true;
+//		}
+//		else {
+//                    for (int i = 0; i < Studentnumber.length(); i++)
+//                    {
+//                        char c = Studentnumber.charAt(i);
+//                        if (((c >= 'A' && c <= 'Z')||(c >= 'a' && c <= 'z'))&&i!=7) {
+//                            error+="Invalid Student Number ";
+//                            flag=true;
+//	            	}
+//	            
+//                    }
 
+        public boolean checkErrorOralmark(final int mark){
+            if(mark<0||mark>10){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
 	public void setOralmark(final int mark) {
-		if(mark<0||mark>10) {
+		if(checkErrorOralmark(mark)) {
 			
 			error+="Invalid Oral mark ";
 			flag=true;
 		} 
 		else this.Oralmark = mark;
 	}
+        public boolean checkErrorMidtermmark(final int mark){
+            if(mark<0||mark>20){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
 	public void setMidtermmark(final int mark) {
-		if(mark<0||mark>20) {
+		if(checkErrorMidtermmark(mark)) {
 			error+="Invalid Midterm mark ";
 			flag=true;
 		} 
 		else
 		this.Midtermmark = mark;
 	}
+        public boolean checkErrorFinalMark(final int mark){
+            if(mark < 0 || mark > 60){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
 	public void setFinalmark(final int mark) {
-		if(mark<0||mark>60) {
+		if(checkErrorFinalMark(mark)) {
 			error+="Invalid Final mark";
 			flag=true;
 		} 
 		else
 		this.Finalmark = mark;
 	}
+        public boolean checkErrorStudentActiv(final int mark){
+            if(mark < 0 || mark > 10){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
 	public void setStudentActivitiesmark(final int mark) {
-		if(mark<0||mark>10) {
+		if(checkErrorStudentActiv(mark)) {
 			error+= "Invalid Student Activities mark";
 			flag=true;
 		}
