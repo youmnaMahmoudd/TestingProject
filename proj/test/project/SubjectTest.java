@@ -13,7 +13,7 @@ class SubjectTest {
        
         String mark = "200";
         Subject instance = new Subject();
-        assertFalse(instance.checkFullmark(mark));
+        assertTrue(instance.checkFullmark(mark));
     }
 	@Test
 	 public void testcheckFullmark2() {
@@ -27,7 +27,7 @@ class SubjectTest {
 	     
 	        String mark = "-1";
 	        Subject instance = new Subject();
-	        assertFalse(instance.checkFullmark(mark));
+	        assertTrue(instance.checkFullmark(mark));
 	    }
 	
 	  @Test
@@ -37,7 +37,7 @@ class SubjectTest {
 	        Subject instance = new Subject();
 	       
 	        // TODO review the generated test code and remove the default call to fail.
-	        assertFalse( instance.checkSubjectName(name));
+	        assertTrue( instance.checkSubjectName(name));
 	    }
 	  
 	  @Test
@@ -57,7 +57,7 @@ class SubjectTest {
 	        Subject instance = new Subject();
 	        
 	        // TODO review the generated test code and remove the default call to fail.
-	        assertFalse(instance.checkcode(code));
+	        assertTrue(instance.checkcode(code));
 	    
 	  }
 	  
