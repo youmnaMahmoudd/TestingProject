@@ -10,21 +10,21 @@ class SubjectTest {
 
 	@Test
 	  public void testSetFullmark1() {
-        System.out.println("setFullmark");
+       
         String mark = "200";
         Subject instance = new Subject();
         assertFalse(instance.checkFullmark(mark));
     }
 	@Test
 	 public void testSetFullmark2() {
-	        System.out.println("setFullmark");
+	       
 	        String mark = "100";
 	        Subject instance = new Subject();
 	        assertFalse(instance.checkFullmark(mark));
 	    }
 	@Test
 	 public void testSetFullmark3() {
-	        System.out.println("setFullmark");
+	     
 	        String mark = "-1";
 	        Subject instance = new Subject();
 	        assertFalse(instance.checkFullmark(mark));
@@ -32,7 +32,7 @@ class SubjectTest {
 	
 	  @Test
 	    public void testSetSubjectName1() {
-	        System.out.println("setSubjectName");
+	      
 	        String name = "abc123";
 	        Subject instance = new Subject();
 	       
@@ -42,7 +42,7 @@ class SubjectTest {
 	  
 	  @Test
 	    public void testSetSubjectName2() {
-	        System.out.println("setSubjectName");
+	        
 	        String name = "abc";
 	        Subject instance = new Subject();
 	        instance.checkSubjectName(name);
