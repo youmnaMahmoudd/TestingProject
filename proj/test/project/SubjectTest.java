@@ -9,21 +9,21 @@ import application.Subject;
 class SubjectTest {
 
 	@Test
-	  public void testSetFullmark1() {
+	  public void testcheckFullmark1() {
        
         String mark = "200";
         Subject instance = new Subject();
         assertFalse(instance.checkFullmark(mark));
     }
 	@Test
-	 public void testSetFullmark2() {
+	 public void testcheckFullmark2() {
 	       
 	        String mark = "100";
 	        Subject instance = new Subject();
 	        assertFalse(instance.checkFullmark(mark));
 	    }
 	@Test
-	 public void testSetFullmark3() {
+	 public void testcheckFullmark3() {
 	     
 	        String mark = "-1";
 	        Subject instance = new Subject();
@@ -31,7 +31,7 @@ class SubjectTest {
 	    }
 	
 	  @Test
-	    public void testSetSubjectName1() {
+	    public void testcheckSubjectName1() {
 	      
 	        String name = "abc123";
 	        Subject instance = new Subject();
@@ -41,7 +41,7 @@ class SubjectTest {
 	    }
 	  
 	  @Test
-	    public void testSetSubjectName2() {
+	    public void testcheckSubjectName2() {
 	        
 	        String name = "abc";
 	        Subject instance = new Subject();
@@ -51,7 +51,7 @@ class SubjectTest {
 	    }
 	  
 	  @Test
-	    public void testSetcode1() {
+	    public void testcheckcode1() {
 	       
 	        String code = "ENG10111";
 	        Subject instance = new Subject();
@@ -63,7 +63,7 @@ class SubjectTest {
 	  
 	  
 	  @Test
-	    public void testSetcode2() {
+	    public void testcheckcode2() {
 	       
 	        String code = "ENG101";
 	        Subject instance = new Subject();
