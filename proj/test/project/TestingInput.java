@@ -1,9 +1,9 @@
-package project;
+
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.*;
-
+import application.Subject;
 import org.junit.jupiter.api.Test;
 
 class TestingInput {
