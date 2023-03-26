@@ -147,6 +147,8 @@ public class StudentTest {
         // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
     }
+    
+    
         /**
      * Test of checkErrorNumber method, of class Student.
      */
@@ -162,6 +164,35 @@ public class StudentTest {
 //        fail("The test case is a prototype.");
     }
     
+            /**
+     * Test of checkErrorNumber method, of class Student.
+     */
+    @Test
+    public void testCheckErrorNumber5() {
+        System.out.println("checkErrorNumber - 5");
+        String Studentnumber = "12345678s";
+        Student instance = new Student();
+        boolean expResult = true;
+        boolean result = instance.checkErrorNumber(Studentnumber);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+    }
+    
+                /**
+     * Test of checkErrorNumber method, of class Student.
+     */
+    @Test
+    public void testCheckErrorNumber6() {
+        System.out.println("checkErrorNumber - 6");
+        String Studentnumber = "1s345678";
+        Student instance = new Student();
+        boolean expResult = true;
+        boolean result = instance.checkErrorNumber(Studentnumber);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+    }
     /**
      * Test of checkErrorOralmark method, of class Student.
      */
@@ -199,6 +230,21 @@ public class StudentTest {
         int mark = 5;
         Student instance = new Student();
         boolean expResult = false;
+        boolean result = instance.checkErrorOralmark(mark);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+    }
+    
+            /**
+     * Test of checkErrorOralmark method, of class Student.
+     */
+    @Test
+    public void testCheckErrorOralmark4() {
+        System.out.println("checkErrorOralmark - 4");
+        int mark = 12;
+        Student instance = new Student();
+        boolean expResult = true;
         boolean result = instance.checkErrorOralmark(mark);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
@@ -333,4 +379,20 @@ public class StudentTest {
         // TODO review the generated test code and remove the default call to fail.
 //        fail("The test case is a prototype.");
     }
+    
+            /**
+     * Test of checkErrorStudentActiv method, of class Student.
+     */
+    @Test
+    public void testCheckErrorStudentActiv4() {
+        System.out.println("checkErrorStudentActiv - 4");
+        int mark = 12;
+        Student instance = new Student();
+        boolean expResult = true;
+        boolean result = instance.checkErrorStudentActiv(mark);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+//        fail("The test case is a prototype.");
+    }
+    
 }
