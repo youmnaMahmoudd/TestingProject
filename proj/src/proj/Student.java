@@ -18,9 +18,11 @@ public class Student {
 		this.id = counter;
 		counter++;
 	}
-	public String getName() {
+	
+        public String getName() {
 		return Studentname;
 	}
+        
         public boolean checkErrorName(final String name){
             if(name.charAt(0)==' '||!(name.matches("^[a-zA-Z ]*$"))){
                 return true;
@@ -29,7 +31,8 @@ public class Student {
                 return false;
             }
         }
-	public void setName(final String name) {
+	
+        public void setName(final String name) {
 		if(checkErrorName(name)) {
 			error+="Invalid Student Name ";
 			flag=true;
@@ -55,6 +58,7 @@ public class Student {
                 return false;
             }
         }
+        
 	public void setnumber(final String Studentnumber) {
             if(checkErrorNumber(Studentnumber)){
                 error += "Invalid Student Number ";
@@ -212,3 +216,13 @@ public class Student {
 
 
 }
+
+// BLACK BOX TESTING - WE HAVE USED BVA -> DONE
+
+// WHITE BOX TESTING - BRANCH TESTING -> HUSSEINY, MO3TAZ
+
+// INTEGRATION -> YOUMNA
+
+// CONTROL FLOW -> HANAN, YOUMNA - OTHERS
+
+// DATA FLOW -> ..
